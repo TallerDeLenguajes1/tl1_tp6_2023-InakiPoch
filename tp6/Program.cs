@@ -25,7 +25,7 @@ void showNumberData(float number) {
     Console.WriteLine("Raiz cuadrada: " + Math.Sqrt(number));
     Console.WriteLine("Seno: " + Math.Sin(number));
     Console.WriteLine("Coseno: " + Math.Cos(number));
-    Console.WriteLine("Parte entera: " + Math.Floor(number));
+    Console.WriteLine("Parte entera: " + Math.Truncate(number));
 }
 
 void calculatorInterface() {
