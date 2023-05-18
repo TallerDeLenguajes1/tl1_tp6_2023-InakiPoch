@@ -1,9 +1,17 @@
-﻿Console.WriteLine("Hello, World!");
+﻿float convertedNumber;
+Console.WriteLine("Ingresar un numero: ");
+string? numberInput = Console.ReadLine();
 
-int a, b;
+while (!float.TryParse(numberInput, out convertedNumber)) {
+    Console.WriteLine("\nNumero invalido\n");
+    Console.WriteLine("Ingresar un numero: ");
+    numberInput = Console.ReadLine();
+}
 
-a = 10;
-b = a;
+string invertedNumber = string.Empty;
 
-Console.WriteLine("Valor de a: " + a);
-Console.WriteLine("Valor de b: " + b);
+for (int i = numberInput.Length - 1; i >= 0; i--) {
+    invertedNumber += numberInput[i];
+}
+
+Console.WriteLine("Numero invertido: " + invertedNumber);
