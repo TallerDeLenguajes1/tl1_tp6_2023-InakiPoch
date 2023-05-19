@@ -72,20 +72,20 @@ void calculatorInterface() {
             }
             switch (correctOption) {
                 case 1:
-                    Console.WriteLine("\nSuma: " + (correctOperandA + correctOperandB));
+                    Console.WriteLine($"\nLa suma entre {operandA.ToString()} y {operandB.ToString()} es : {(correctOperandA + correctOperandB).ToString()}");
                     break;
                 case 2:
-                    Console.WriteLine("\nResta: " + (correctOperandA - correctOperandB));
+                    Console.WriteLine($"\nLa resta entre {operandA.ToString()} y {operandB.ToString()} es : {(correctOperandA - correctOperandB).ToString()}");
                     break;
                 case 3:
-                    Console.WriteLine("\nMultiplicacion: " + (correctOperandA * correctOperandB));
+                    Console.WriteLine($"\nLa multiplicacion entre {operandA.ToString()} y {operandB.ToString()} es : {(correctOperandA * correctOperandB).ToString()}");
                     break;
                 case 4:
-                    Console.WriteLine("\nDivision: " + (correctOperandA / correctOperandB));
+                    Console.WriteLine($"\nLa division entre {operandA.ToString()} y {operandB.ToString()} es : {(correctOperandA / correctOperandB).ToString()}");
                     break;
                 case 6:
-                    Console.WriteLine("\nMaximo: " + Math.MaxMagnitude(correctOperandA, correctOperandB));
-                    Console.WriteLine("Minimo: " + Math.MinMagnitude(correctOperandA, correctOperandB));
+                    Console.WriteLine($"\nEl maximo entre {operandA.ToString()} y {operandB.ToString()} es : {Math.MaxMagnitude(correctOperandA, correctOperandB).ToString()}");
+                    Console.WriteLine($"La suma entre {operandA.ToString()} y {operandB.ToString()} es : {Math.MinMagnitude(correctOperandA, correctOperandB)}");
                     break;
             }
         }
@@ -115,4 +115,48 @@ void calculatorInterface() {
     }
 }
 
+//EJERCICIO 4
+Console.WriteLine("Ingresar una cadena");
+string? inputText = Console.ReadLine();
+while (inputText == null) {
+    Console.WriteLine("Ingresar una cadena valida");
+    inputText = Console.ReadLine();
+}
+Console.WriteLine("Su longitud es: " + inputText.Length);
+Console.WriteLine("Ingresar otra cadena");
+string? secondInputText = Console.ReadLine();
+while (secondInputText == null) {
+    Console.WriteLine("Ingresar una cadena valida");
+    secondInputText = Console.ReadLine();
+}
+Console.WriteLine("Cadenas concatenadas: " + inputText + secondInputText);
+Console.WriteLine("Subcadena: " + inputText.Substring(3));
+
 calculatorInterface();
+
+int letterOcurrencies = 0;
+foreach (char character in inputText) {
+    Console.WriteLine(character);
+    if(character == 'a') {
+        letterOcurrencies++;
+    }
+}
+Console.WriteLine("\nOcurrencias de la letra a: " + letterOcurrencies);
+
+Console.WriteLine("Cadena en minusculas: " + inputText.ToLower());
+Console.WriteLine("Cadena en mayusculas: " + inputText.ToUpper());
+
+Console.WriteLine("Ingresar una cadena separada por espacios");
+string? testString = Console.ReadLine();
+while (testString == null) {
+    Console.WriteLine("Ingresar una cadena valida");
+    testString = Console.ReadLine();
+}
+string[] substrings = testString.Split(' ');
+while (substrings.Length == 0) {
+    Console.WriteLine("Ingresar espacios en la cadena");
+    testString = Console.ReadLine();
+}
+foreach (string substring in substrings) {
+    Console.WriteLine("Subcadena: " + substring);
+}
