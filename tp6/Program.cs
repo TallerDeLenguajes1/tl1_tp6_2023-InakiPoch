@@ -15,3 +15,5 @@ for (int i = numberInput.Length - 1; i >= 0; i--) {
 }
 
 Console.WriteLine("Numero invertido: " + invertedNumber);
+
+
